@@ -1,0 +1,45 @@
+{% extends 'BasePage.html' %}
+
+
+{% block title %}
+首頁
+{% endblock %}
+
+{% block main %}
+
+	<div id="hot" style="width: 80%; margin-left: 10%; margin-top: 20px">
+
+		{% for row in travel %}
+
+			<div style="width: 20%; float: left; height: 400px; padding: 5px;">
+				<img src="{{row[4]}}" style="width: 100%;">
+				<p>{{row[1]}}</p>
+				<span>NT$:{{row[2]}}</span>
+
+			</div>
+
+
+		{% endfor %}
+		
+	</div>
+
+	<div style="clear: both;"></div>
+
+		<div id="hotgoods" style="width: 80%; margin-left: 10%;">
+
+		{% for row in goods %}
+
+			<div style="width: 20%; float: left; height: 400px; padding: 5px;">
+				<img src="{{row[4]}}" style="width: 100%;">
+				<p>{{row[2]}}</p>
+				<span>NT$:{{row[3]}}</span>
+
+			</div>
+
+
+		{% endfor %}
+		
+	</div>
+
+
+{% endblock %}
