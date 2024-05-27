@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		{% block title %}
+		{% endblock %}
+	</title>
+
+	<!-- 和Django不同的地方在於css的串入方法 -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css')}}">
+
+	{% block css %}
+	{% endblock %}
+
+</head>
+<body>
+
+	<div id="wrapper">
+
+		<div id="banner">
+		</div>
+		
+		<div id="menu">
+			<ul>
+				<li><a href="/">首頁</a> </li>
+				<li><a href="/product">產品</a></li>
+				<li><a href="/message">問題</a></li>
+			</ul>
+		</div>
+		<div id="content">
+			<div id="goodsArea">
+				{% block main %}
+				{% endblock %}
+			</div>
+			
+		</div>
+
+	</div>
+	<div id="footer">
+		Flask 網頁作品＠Carol製作
+	</div>
+
+</body>
+</html>
