@@ -1,0 +1,3 @@
+flask
+Django==3.11.7
+psycopg2
